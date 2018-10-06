@@ -15,6 +15,7 @@ int main(int argc, char const *argv[])
     cout <<"please input a interger: ";
     cin >> j;
 
+    // C++中不同类型的变量，在输出时无需向C语言那样指定不同的类型：%d, %f, %s
     cout << "i = " << i << "\n";
     cout << "j = " << j << "\n";
     cout << "d = " << d << endl;    //endl 等同于"\n"
