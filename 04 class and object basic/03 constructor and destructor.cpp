@@ -18,7 +18,6 @@ class Box
             length = l;
             width = w;
             height = h;
-
         }
         ~Box()
         {

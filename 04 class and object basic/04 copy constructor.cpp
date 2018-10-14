@@ -13,12 +13,14 @@ public:
         x = x1;
         y = y1;
     }
+    
     Point(Point& p) //copy constructor. 入参是Point类的一个引用
     {
         cout << "in copy constructor" << endl;
         x = p.x;
         y = p.y;
     }
+    
     int getX()
     {
         return x;
