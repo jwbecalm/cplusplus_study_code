@@ -12,12 +12,19 @@ class Box
         {
             cout << "in constructor: Box()" << endl;
         }
+        /*
         Box(int l, int w, int h)
         {
             cout << "in constructor: Box(int, int, int)" << endl;
             length = l;
             width = w;
             height = h;
+        }
+        */
+        //带初始化列表的构造函数，等同于上面的构造函数。
+        Box (int l, int w, int h) : length(l), width(w), height(h)
+        {
+            cout << "in constructor with initial list" << endl;
         }
         ~Box()
         {
@@ -30,7 +37,7 @@ int main(int argc, char const *argv[])
     Box box1;   //构造函数在创建对象时自动调用
 
     //constructor overloading
-    Box box2(10,20,30); //带初始化列表的构造函数
+    Box box2(10,20,30); 
     //等同于下面的方式
     Box box3 = Box(10,20,30);
 
