@@ -95,6 +95,8 @@ int main(int argc, char const *argv[])
     cout << "in ns level 1: i = " << level1::i << endl;
     cout << "in ns level 2: i = " << level1::level2::i << endl;
 
+    cout << ::ns1::i << endl;
+
     return 0;
 }
 
