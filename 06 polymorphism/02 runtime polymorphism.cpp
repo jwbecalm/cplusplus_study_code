@@ -15,6 +15,7 @@ using namespace std;
 class Base 
 { 
 public: 
+    virtual void test();
     virtual void print () 
     { cout<< "print Base class" <<endl; } 
    
@@ -25,12 +26,17 @@ public:
 class Derived : public Base 
 { 
 public: 
+    virtual void test();
     void print () //print () is already virtual function in Derived class, we could also declared as virtual void print () explicitly 
     { cout<< "print Derived class" <<endl; } 
    
     void show () 
     { cout<< "show Derived class" <<endl; } 
 }; 
+
+void Derived::test() {
+    cout << "in void Derived::test()" << endl;
+}
   
 //main function 
 int main()  

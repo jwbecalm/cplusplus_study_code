@@ -33,6 +33,11 @@ int main(int argc, char const *argv[])
     cout << "d = " << d << endl;    //使用时编译器会自动添加取内容符号*
     cout << "rd = " << rd << endl;
 
+    ri = 10;    //改变引用的值，即改变了i的值
+    cout << "i = " << i <<endl;
+    cout << "ri = " << ri <<endl;
+
+
     return 0;
 }
 
