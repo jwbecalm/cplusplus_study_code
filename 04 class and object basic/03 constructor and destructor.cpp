@@ -13,7 +13,7 @@ class Box
             cout << "in constructor: Box()" << endl;
         }
         /*
-        Box(int l, int w, int h)
+        Box(int l, int w, int h)    //构造函数可以重载
         {
             cout << "in constructor: Box(int, int, int)" << endl;
             length = l;

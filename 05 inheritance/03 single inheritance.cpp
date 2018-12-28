@@ -4,10 +4,15 @@ using namespace std;
 // base class
 class Vehicle
 {
+  int x;
   public:
     Vehicle()   //base class constructor
     {
         cout << "This is a Vehicle" << endl;
+    }
+
+    Vehicle(int x_): x(x_){
+        cout << "in Vehicle::Vehicle(int x_)" << endl;
     }
 };
 
