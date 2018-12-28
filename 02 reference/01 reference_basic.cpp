@@ -24,8 +24,8 @@ int main(int argc, char const *argv[])
     int i = 2;
     double d = 1.34;
 
-    int& ri = i;    //声明ri是一个指向i的引用，存储的是变量的地址
-    double &rd = d; //声明rd是一个指向d的引用
+    int& ri = i;    //声明ri是一个指向i的引用，存储的是变量i的地址
+    double &rd = d; //声明rd是一个指向d的引用, 存储的是变量d的地址
 
     cout << "i = " << i <<endl;
     cout << "ri = " << ri <<endl;
