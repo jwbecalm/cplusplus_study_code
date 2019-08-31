@@ -1,6 +1,13 @@
 #include <iostream>
 
 using namespace std;
+/*
+This is okay for small projects, as long as you write the using directive in your cpp file. 
+Never write a using directive into a header file! 
+This would bloat the entire namespace std into each and every cpp file 
+that includes that header. For larger projects, 
+it is better to explicitly qualify every name accordingly.
+*/
 
 namespace ns1   //Namespace declarations appear only at global scope
 {
