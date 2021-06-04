@@ -21,12 +21,23 @@ int main(int argc, char const *argv[])
     array = { 0, 1, 2, 3, 4 }; // okay, array length is now 5
 
     //vector keeps track of its length. We can ask for the vector’s length via the size() function
-    std::cout << "The length is: " << array.size() << '\n';
+    std::cout << "The length of array.size() = " << array.size() << '\n';
 
     array.resize(10);   //Resizing the vector
-    std::cout << "After resize, the length is: " << array.size() << '\n';
+    std::cout << "After resize, the length of array.size() = " << array.size() << '\n';
     //when we resized the array, the existing element values were preserved! 
     //Second, new elements are initialized to the default value for the type (which is 0 for integers)
+    for (auto const &element: array)
+        std::cout << element << ' ';
+    cout << endl;
+
+    array.clear();
+
+    //array[0] = 9;
+    //array[1] = 10;
+
+    array.push_back(9);
+    array.push_back(10);
     for (auto const &element: array)
         std::cout << element << ' ';
     cout << endl;
