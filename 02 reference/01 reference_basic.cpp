@@ -24,6 +24,9 @@ int main(int argc, char const *argv[])
     int i = 2;
     double d = 1.34;
 
+    // int& j = 100;   //error， 不能把一个数值直接赋给引用。
+    const int& x = 200;     // OK, 定义为常量后，可以直接赋值。
+
     int& ri = i;    //声明ri是一个指向i的引用，存储的是变量i的地址
     double &rd = d; //声明rd是一个指向d的引用, 存储的是变量d的地址
 
@@ -33,7 +36,7 @@ int main(int argc, char const *argv[])
     cout << "d = " << d << endl;    //使用时编译器会自动添加取内容符号*
     cout << "rd = " << rd << endl;
 
-    ri = 10;    //改变引用的值，即改变了i的值
+    ri = 10;    //改变引用的值，即改变了i的值。访问引用，就是在访问那个存储单元。
     cout << "i = " << i <<endl;
     cout << "ri = " << ri <<endl;
 
