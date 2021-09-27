@@ -69,17 +69,20 @@ void funcOfEat(Animal *animal)  //the input parameter is a base class type,
 int main(int argc, char const *argv[])
 {
     Animal *pa = new Animal;
-    //Cat    *pc = new Cat; // new Class way can't trigger constructor and deconstructor
-    Cat objectC;
-    Cat *pc = &objectC;
-
     funcOfEat(pa);
+
+    Cat    *pc = new Cat; // new Class way can't trigger constructor and deconstructor
+    //Cat objectC;
+    //Cat *pc = &objectC; 
     funcOfEat(pc);
 
     // we can add a new animal, call the same function
     Dog *pd = new Dog;
     funcOfEat(pd);
-
-    //Dog objectD;    // this way can triger deconstructor auto
+    
+    delete pa;
+    delete pc;
+    delete pd;
+    
     return 0;
 }

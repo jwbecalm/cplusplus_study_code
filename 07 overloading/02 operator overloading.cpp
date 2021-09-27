@@ -33,22 +33,23 @@ class Box
         cout << "in Box desconstructor: getVolume() = ";
         cout << this->getVolume() << endl;
     }
-      inline double getVolume(void)
-      {
-         return length * breadth * height;
-      }
-      void setLength( double len )
-      {
-          length = len;
-      }
-      void setBreadth( double bre )
-      {
-          breadth = bre;
-      }
-      void setHeight( double hei )
-      {
-          height = hei;
-      }
+
+    inline double getVolume(void)
+    {
+        return length * breadth * height;
+    }
+    void setLength( double len )
+    {
+        length = len;
+    }
+    void setBreadth( double bre )
+    {
+        breadth = bre;
+    }
+    void setHeight( double hei )
+    {
+        height = hei;
+    }
       
    private:
       double length;      // 长度
@@ -67,7 +68,7 @@ Box Box::operator+(const Box& b)    //definition outside the class
     box.height  = this->height + b.height;
     
     cout << "before func return" << endl;
-    return box;     // Returning an object invokes the copy constructor
+    return box;     // Returning an object invokes the copy constructor.  完后box对象将会被销毁。
 }
 
 // 程序的主函数
@@ -97,7 +98,7 @@ int main( )
    cout << "Volume of Box2 : " << volume <<endl;
  
    // 把两个对象相加，得到 Box3
-   Box3 = Box1 + Box2;      // Box3 = Box1.add(Box2);
+   Box3 = Box1 + Box2;      // Box3 = Box1.add(Box2);  运算符重载只是一种语法上的方便，同引用一样。
  
    // Box3 的体积
    volume = Box3.getVolume();

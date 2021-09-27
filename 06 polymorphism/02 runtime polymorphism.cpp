@@ -47,9 +47,12 @@ int main()
        
     //virtual function, binded at runtime (Runtime polymorphism) 
     bptr->print();  
+    bptr->test();
        
     // Non-virtual function, binded at compile time 
     bptr->show();  
+
+    
   
     return 0; 
 }  
