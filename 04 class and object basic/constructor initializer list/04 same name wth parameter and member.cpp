@@ -13,7 +13,7 @@ public:
 A::A(int i):i(i) { }  // Either Initializer list or this-> pointer must be used
 /* The above constructor can also be written as
 A::A(int i) {
-    this->i = i;cd ..
+    this->i = i;
 }
 */
  
