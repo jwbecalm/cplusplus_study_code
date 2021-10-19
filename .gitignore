@@ -1,4 +1,5 @@
 *.out
 *.json
 *.exe
+*.o
 

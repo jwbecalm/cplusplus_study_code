@@ -15,7 +15,8 @@ using namespace std;
 class Base 
 { 
 public: 
-    virtual void test();
+    virtual void test()
+    { cout<< "in Base::test()" <<endl; } 
     virtual void print () 
     { cout<< "print Base class" <<endl; } 
    

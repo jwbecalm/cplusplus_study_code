@@ -29,7 +29,7 @@ public:
     {
         test();
         Setup();
-        Parent::Setup();    // access Parent method without a parent's object?
+        Parent::Setup();    // access Parent method without a parent's object? --这里Parent::是作用域，在子类中访问父类方法
         cout << "in Child class Setup()" << endl;
     }
 };

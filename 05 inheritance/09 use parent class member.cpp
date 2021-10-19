@@ -11,14 +11,14 @@ public:
 class RRCSIB1Ctxt : public SIBCtxtBase {
 public:
     void setInitialCtxt() {
-        mapped = 1;      // 子类在继承父类的同时，拥有了父类的public成员
+        mapped = 1;      // 子类在继承父类的同时，拥有了父类的public成员; 修改子类的成员不影响父类的成员
     }
 };
 
 class RRCSIB2Ctxt : public SIBCtxtBase {
 public:
     void setInitialCtxt() {
-        mapped = 2;      // 子类在继承父类的同时，拥有了父类的public成员
+        mapped = 2;      // 子类在继承父类的同时，拥有了父类的public成员； 修改子类的成员不影响父类的成员
     }
 };
 

@@ -5,6 +5,9 @@ class Parent
 {
 public:
     int p;
+    Parent(){
+        p = 100;
+    }
     void setup(){
         cout << "in Parent::setup()" << endl;
     }
@@ -29,8 +32,8 @@ int main(int argc, char const *argv[])
     Child co;
     co.p = 10;  //Child 也拥有了父类的public成员
     co.c = 20;
-    cout << "co.p = " << co.p << endl;
-    cout << "co.c = " << co.c << endl;
+    cout << "Child::p = " << co.p << endl;
+    cout << "Child::c = " << co.c << endl;
 
     Parent po;
     cout << "Parent::p = " << po.p << endl;

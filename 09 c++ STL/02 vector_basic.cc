@@ -25,9 +25,10 @@ int main(int argc, char const *argv[])
 
     array.resize(10);   //Resizing the vector
     std::cout << "After resize, the length of array.size() = " << array.size() << '\n';
+    
     //when we resized the array, the existing element values were preserved! 
     //Second, new elements are initialized to the default value for the type (which is 0 for integers)
-    for (auto const &element: array)
+    for (const auto& element: array)    // 当只想读取range中元素时，使用const auto&,如：for(const auto&x:range),它不会进行拷贝，也不会修改range 
         std::cout << element << ' ';
     cout << endl;
 
@@ -38,7 +39,7 @@ int main(int argc, char const *argv[])
 
     array.push_back(9);
     array.push_back(10);
-    for (auto const &element: array)
+    for (const auto& element: array)
         std::cout << element << ' ';
     cout << endl;
 

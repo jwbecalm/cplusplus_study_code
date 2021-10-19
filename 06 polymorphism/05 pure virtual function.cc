@@ -9,8 +9,8 @@ using namespace std;
 class Shape 
 {
 public:
-   // 提供接口框架的纯虚函数
-   virtual int getArea() = 0;
+   
+   virtual int getArea() = 0; // 提供接口框架的纯虚函数, 没有实现代码。通过多态进行运行时绑定，程序可以在运行时传入不同的子类对象，灵活调用不同子类的方法。
    void setWidth(int w)
    {
       width = w;
