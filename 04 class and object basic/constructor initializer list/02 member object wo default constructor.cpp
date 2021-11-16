@@ -11,7 +11,7 @@ public:
  
 A::A(int arg) {
     i = arg;
-    cout << "A's Constructor called: Value of i: " << i << endl;
+    cout << "A's Constructor called: i = " << i << endl;
 }
  
 // Class B contains object of A
@@ -23,7 +23,7 @@ public:
 };
  
 B::B(int x, int y):a(x), i(y) {  //Initializer list must be used
-    cout << "B's Constructor called" << endl;
+    cout << "B's Constructor called, i = " << i << endl;
 }
  
 int main() {
