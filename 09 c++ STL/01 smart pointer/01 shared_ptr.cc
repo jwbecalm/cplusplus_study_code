@@ -30,7 +30,8 @@ public:
 int main() 
 { 
     shared_ptr<A> p1 (new A); 
-    cout << p1.get() << endl; 
+    cout <<"p1 = " << p1 << endl;
+    cout << "p1.get()= " << p1.get() << endl; 
     p1->show(); 
     shared_ptr<A> p2 (p1); 
     p2->show(); 

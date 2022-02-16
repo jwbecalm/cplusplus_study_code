@@ -30,6 +30,16 @@ class Box
         {
             cout << "in destructor ~Box()" << endl;
         }
+        int getLen(){
+            return length;
+        }
+        int getWidth(){
+            return width;
+        }
+        int getHeight(){
+            return height;
+        }
+
 };
 
 int main(int argc, char const *argv[])
@@ -39,7 +49,11 @@ int main(int argc, char const *argv[])
     //constructor overloading
     Box box2(10,20,30); 
     //等同于下面的方式
-    Box box3 = Box(10,20,30);
+    Box box3 = Box(40,50,60);
+
+    cout << "pass self object as parameter to construct a new object" << endl;
+    Box box4(box3);
+    cout << box4.getLen() << endl << box4.getWidth()  << endl << box4.getHeight() << endl;
 
     return 0;
 }

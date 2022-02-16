@@ -1,4 +1,12 @@
 // https://www.geeksforgeeks.org/override-keyword-c/
+/*
+It helps to check if :
+
+There is a method with the same name in the parent class.
+The method in the parent class is declared as “virtual” which means it was intended to be rewritten.
+The method in the parent class has the same signature as the method in the subclass.
+*/
+
 
 // A CPP program without override keyword. Here
 // programmer makes a mistake and it is not caught.

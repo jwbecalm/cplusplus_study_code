@@ -20,6 +20,14 @@ int main(int argc, char const *argv[])
     cout << "j = " << j << "\n";
     cout << "d = " << d << endl;    //endl 等同于"\n"
     cout << "s = " << s << "\n";
+
+    // test for self set value
+    int threshold = 2;
+    int size = 400;
+    if (size <= 600){
+        threshold = threshold;
+    }
+    cout << "threshold = " << threshold << endl;
     return 0;
 }
 
