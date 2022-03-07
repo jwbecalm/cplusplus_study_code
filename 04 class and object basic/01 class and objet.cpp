@@ -38,7 +38,7 @@ void Box::setHeight(int h)
 }
 
 
-int main(int argc, char const *argv[])
+int main()
 {
     Box box;    //创建一个Box类的对象，名为box
     //box.length = 88;  //forbidden, lenght is priviate by default

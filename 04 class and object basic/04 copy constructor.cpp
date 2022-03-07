@@ -30,7 +30,7 @@ public:
         return y;
     }
 };
-int main(int argc, char const *argv[])
+int main()
 {
     Point p1(4,5);  // Normal constructor is called here
     cout << "x = " << p1.getX() << ", y = " << p1.getY() << endl;

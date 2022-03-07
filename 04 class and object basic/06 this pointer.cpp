@@ -43,7 +43,7 @@ public:
     }
 };
 
-int main(int argc, char const *argv[])
+int main()
 {
     Point p1(10,20);
     p1.displayXY();

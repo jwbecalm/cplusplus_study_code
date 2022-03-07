@@ -15,7 +15,7 @@ class Base {};
 
 class Derived: public Base {};
 
-int main(int argc, char const *argv[])
+int main()
 {
     Base * a = new Base;
     Derived * b = static_cast<Derived*>(a);

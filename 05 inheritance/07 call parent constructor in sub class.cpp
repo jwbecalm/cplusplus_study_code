@@ -31,7 +31,7 @@ public:
 
 };
 
-int main(int argc, char const *argv[])
+int main()
 {
     
     Parent pObj1(10);

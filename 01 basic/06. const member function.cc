@@ -23,7 +23,7 @@ private:
     int age;
 };
 
-temp::temp(int age)
+temp::temp(int age)git 
 {
     this->age = age;
 }

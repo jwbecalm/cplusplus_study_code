@@ -39,7 +39,7 @@ struct demo
     int a;
 };
 
-int main(int argc, char const *argv[])
+int main()
 {
     int a = 45, b= 35;
     cout << "swap by pointer--------------------------------" << endl;

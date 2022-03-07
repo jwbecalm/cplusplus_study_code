@@ -66,7 +66,7 @@ void funcOfEat(Animal *animal)  //the input parameter is a base class type,
     animal->eat();
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
     Animal *pa = new Animal;
     funcOfEat(pa);

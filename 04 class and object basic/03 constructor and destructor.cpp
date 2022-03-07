@@ -42,7 +42,7 @@ class Box
 
 };
 
-int main(int argc, char const *argv[])
+int main()
 {
     Box box1;   //构造函数在创建对象时自动调用
 

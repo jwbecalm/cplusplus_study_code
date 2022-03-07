@@ -16,6 +16,8 @@ class Sig {
     int getIntMember() const{   // 如果函数返回值采用“值传递方式”，由于函数会把返回值复制到外部临时的存储单元中，加 const 修饰没有任何价值
         return intMember;
     }
+
+    // If you want a function to return a vector that can't be modified, then use the const modifier on both the vector and the function
     const std::vector<unsigned int>& getVMember() const{
         return vMember;     // Return reference to a vector member variable. https://stackoverflow.com/questions/8384234/return-reference-to-a-vector-member-variable
     }

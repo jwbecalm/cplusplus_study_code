@@ -75,7 +75,7 @@ namespace level1
         int i = 77;
     }
 }
-int main(int argc, char const *argv[])
+int main()
 {
     /* Different ways to access namespace */
     // 1. Normal way

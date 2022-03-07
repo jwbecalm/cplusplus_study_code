@@ -37,7 +37,7 @@ public:
 
 int Point::objcount = 0;      // 静态数据成员在类外面，利用范围解析运算符 :: 定义和初始化
 
-int main(int argc, char const *argv[])
+int main()
 {   
     //在创建对象之前，可以直接调用静态成员和静态成员函数
     cout << "before create object, getCount() = " << Point::getCount() << endl;

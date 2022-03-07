@@ -19,7 +19,7 @@ C++ 引用 vs 指针
 
 using namespace std;
 
-int main(int argc, char const *argv[])
+int main()
 {
     int i = 2;
     double d = 1.34;

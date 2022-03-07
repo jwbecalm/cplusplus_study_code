@@ -9,7 +9,7 @@ without having to explicitly allocate and deallocate memory using new and delete
 #include <iostream>
 using namespace std;
 
-int main(int argc, char const *argv[])
+int main()
 {
     //Note that in both the uninitialized and initialized case, 
     //you do not need to include the array length at compile time. 

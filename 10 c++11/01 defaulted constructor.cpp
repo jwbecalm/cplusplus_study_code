@@ -38,7 +38,7 @@ struct sttype
     //st() = default;
 };
 
-int main(int argc, char const *argv[])
+int main()
 {
     Point p1;   // if no defaulted constructor, compile error: no default constructor exist
     

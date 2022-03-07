@@ -59,7 +59,7 @@ void printxy(Point &p)
     cout << "y = " << p.y << endl;
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
     Point p1(10,20);
     printxy(p1);    //在类的外部访问类的私有成员，函数参数中传入对象名，访问该对象的私有成员

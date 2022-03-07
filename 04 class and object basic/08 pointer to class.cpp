@@ -18,7 +18,7 @@ public:
     }
 };
 
-int main(int argc, char const *argv[])
+int main()
 {
     Box b1(1,2,3);
     Box b2(3,4,5);

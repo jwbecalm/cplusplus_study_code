@@ -27,7 +27,7 @@ public:
     }
 };
 
-int main(int argc, char const *argv[])
+int main()
 {
     Child co;
     co.p = 10;  //Child 也拥有了父类的public成员

@@ -42,7 +42,7 @@ struct TestStruct {
 */
 };
 
-int main(int argc, char const *argv[])
+int main()
 {
     TestStruct ts = TestStruct(3004);
     cout << ts.ss.si << endl;

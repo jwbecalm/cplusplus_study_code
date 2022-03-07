@@ -34,7 +34,7 @@ public:
     }
 };
 
-int main(int argc, char const *argv[])
+int main()
 {
     Child co;
     co.Setup2();

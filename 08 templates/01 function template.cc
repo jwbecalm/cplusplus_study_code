@@ -24,7 +24,7 @@ T myMax(T x, T y)
     return (x > y) ? x : y;
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
     cout << myMax<int>(5,10) << endl;           // call myMax for int 
     cout << myMax<double>(1.0, 4.2) << endl;    // call myMax for double

@@ -63,7 +63,7 @@ class SubTest : public Test
 
 };
 
-int main(int argc, char const *argv[])
+int main()
 {
     Test t;
     // public 在任何地方都可以访问：outside the class
