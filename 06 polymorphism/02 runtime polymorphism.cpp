@@ -20,25 +20,44 @@ public:
     virtual void print () 
     { cout<< "print Base class" <<endl; } 
    
-    void show () 
+    void show ()
     { cout<< "show Base class" <<endl; } 
+
+    virtual void printData() const{
+        cout<< "in Base::printData()" <<endl;
+    }
 }; 
    
 class Derived : public Base 
 { 
 public: 
-    virtual void test();
-    void print () //print () is already virtual function in Derived class, we could also declared as virtual void print () explicitly 
+    virtual void test() override /*final*/;
+    void print () override  //print () is already virtual function in Derived class, we could also declared as virtual void print () explicitly 
     { cout<< "print Derived class" <<endl; } 
    
     void show () 
     { cout<< "show Derived class" <<endl; } 
+
+    void printData() const override;
 }; 
 
-void Derived::test() {
+void Derived::printData() const{
+    cout << "in Derived::printData()" << endl;
+}
+
+void Derived::test() /*override*/ {     // error: virt-specifiers in 'test' not allowed outside a class definition
     cout << "in void Derived::test()" << endl;
 }
   
+
+class SecondDerived: public Derived{
+    public:
+    virtual void test() override;   // compile error the parent class function is final, so cannot override by child.
+};
+void SecondDerived::test(){
+    cout << "in void SecondDerived::test()" << endl; 
+}
+
 //main function 
 int main()  
 { 
@@ -49,11 +68,15 @@ int main()
     //virtual function, binded at runtime (Runtime polymorphism) 
     bptr->print();  
     bptr->test();
+    bptr->printData();
        
     // Non-virtual function, binded at compile time 
     bptr->show();  
 
-    
-  
+    Derived *d2;
+    SecondDerived sd;
+    d2 = &sd;
+    d2->test();
+
     return 0; 
 }  

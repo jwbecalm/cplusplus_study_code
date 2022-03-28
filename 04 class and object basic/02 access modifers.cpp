@@ -79,10 +79,11 @@ int main()
     t.setPri(22);
     cout << "pri = " << t.getPri() << endl;
 
-    // protected 和private类似，但是可以在子类中访问——也只能通过对象.成员方法去访问
-    //t.pro = 31; // compile error，基类中无法访问
-    //t.getPro3();    //proteced 的方法也无法直接访问
-    // but can access in subclass(derived class)
+    // protected 和private类似，不能在类外部访问
+    //t.pro = 31;     // compile error，类外部无法访问
+    //t.getPro3();    //compile error,  类外部，通过proteced 的方法也无法直接访问
+
+    // but can access in subclass(derived class) 但是可以在子类中访问:——也只能通过对象.成员方法去访问
     SubTest  st;
     //st.pro = 32;    //继承类对象，也无法通过.成员的方式去访问
     cout << "pro = " << st.getPro2() << endl;   //通过继承类自己的成员函数进行访问

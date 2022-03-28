@@ -8,7 +8,7 @@ public:
     Parent(){
         p = 100;
     }
-    void setup(){
+    virtual void setup(){
         cout << "in Parent::setup()" << endl;
     }
 };
@@ -17,10 +17,10 @@ class Child : public Parent //通过public的方式继承
 {
 public:
     int c;
-    // void setup(){
-    //     cout << "in Child::setup()" << endl;
-    //     Parent::setup();   // 在子类中调用父类的成员方法：因为子类自动获得父类的public成员方法。
-    // }
+    void setup() override {
+        cout << "in Child::setup()" << endl;
+        Parent::setup();   // 在子类中调用父类的成员方法：因为子类自动获得父类的public成员方法。
+    }
     void test(){
         cout << "in Child::test()" << endl;
         Parent::setup();    //在子类中调用父类的成员方法：因为子类自动获得父类的public成员方法。
