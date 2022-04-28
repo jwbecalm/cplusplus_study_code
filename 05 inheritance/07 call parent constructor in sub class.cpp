@@ -1,50 +1,46 @@
 #include <iostream>
 using namespace std;
+// https://www.tutorialspoint.com/what-are-the-rules-for-calling-the-superclass-constructor-cplusplus
+// https://www.learncpp.com/cpp-tutorial/constructors-and-initialization-of-derived-classes/
 
-class Parent {
-    int p;
-    int x;
-public:
-    Parent() = default;
-    Parent(int p_): x(99), p(p_){
-    }
 
-    int getP()
-    {
-        return p;
-    }
-    int getX()
-    {
-        return x;
-    }
+/*output:
+Constructor of base class
+Constructor of derived class
+*/
+class MyBaseClass {
+   public:
+      MyBaseClass() {
+         cout << "Constructor of base class" << endl;
+      }
+};
+class MyDerivedClass : public MyBaseClass {
+   public:
+      MyDerivedClass() {
+         cout << "Constructor of derived class" << endl;
+      }
 };
 
-class Child : public Parent {
-    int c;
-public:
-    //Child(int c_): Parent(1001),c(c_){    // 子类初始化父类的私有成员， 只能在初始化列表中进行
-    Child(int c_): c(c_){
-    }
-    int getC(){
-        return c;
-    }
 
+/*output:
+Constructor of base class: 50
+Constructor of derived class: 100
+*/
+class MyBaseClass2 {
+   public:
+   MyBaseClass2(int x) {
+      cout << "Constructor of base class: " << x << endl;
+   }
+};
+class MyDerivedClass2 : public MyBaseClass2 { //base constructor as initializer list
+   public:
+      MyDerivedClass2(int y) : MyBaseClass2(50) {
+         cout << "Constructor of derived class: " << y << endl;
+      }
 };
 
-int main()
-{
-    
-    Parent pObj1(10);
-    cout << "Parent:: p = " << pObj1.getP() << endl;
-    cout << "Parent:: x = " << pObj1.getX() << endl;
 
-    Parent pObj2(20);
-    cout << "Parent:: p = " << pObj2.getP() << endl;
-    cout << "Parent:: x = " << pObj2.getX() << endl;
-    
-    Child cObjct(55);
-    cout << "Child:: c = " << cObjct.getC() << endl;
-    cout << "Parent:: p = " << cObjct.getP() << endl;
-    cout << "Parent:: x = " << cObjct.getX() << endl;
-    return 0;
+int main() {
+   MyDerivedClass derived;
+   MyDerivedClass2 derived2(100);
 }

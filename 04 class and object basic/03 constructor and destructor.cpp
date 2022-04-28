@@ -1,16 +1,28 @@
 #include <iostream>
 using namespace std;
 
+class Cells{
+    public:
+    int id;
+    int pci;
+    float frequency;
+    Cells(){
+        cout << "in Cells()" << endl;
+    }
+};
+
 class Box
 {
     private:
         int length;
         int width;
         int height;
+        
     public:
-        Box()   //构造函数和类名同名，无返回类型，也无需返回void
+        Cells cells;
+        Box(): cells()   //构造函数和类名同名，无返回类型，也无需返回void
         {
-            cout << "in constructor: Box()" << endl;
+            cout << "in default constructor: Box()" << endl;
         }
         /*
         Box(int l, int w, int h)    //构造函数可以重载
@@ -22,7 +34,7 @@ class Box
         }
         */
         //带初始化列表的构造函数，等同于上面的构造函数。
-        Box (int l, int w, int h) : length(l), width(w), height(h)
+        Box (int l, int w, int h) : length(), width(), height()
         {
             cout << "in constructor with initial list" << endl;
         }
@@ -45,6 +57,8 @@ class Box
 int main()
 {
     Box box1;   //构造函数在创建对象时自动调用
+    cout << "len, width, height is: " << box1.getLen() << endl << box1.getWidth()  << endl << box1.getHeight() << endl;
+    cout << "cells parameter: " <<  box1.cells.id << endl << box1.cells.pci  << endl  << box1.cells.frequency << endl;
 
     //constructor overloading
     Box box2(10,20,30); 
