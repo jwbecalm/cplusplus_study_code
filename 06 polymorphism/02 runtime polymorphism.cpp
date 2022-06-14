@@ -16,16 +16,29 @@ class Base
 { 
 public: 
     virtual void test()
-    { cout<< "in Base::test()" <<endl; } 
-    virtual void print () 
-    { cout<< "print Base class" <<endl; } 
-   
-    void show ()
-    { cout<< "show Base class" <<endl; } 
+    { cout<< "Base::test()" <<endl; } 
 
+    virtual void print () 
+    { cout<< "Base::print()" <<endl; } 
+   
     virtual void printData() const{
-        cout<< "in Base::printData()" <<endl;
+        cout<< "Base::printData()" <<endl;
     }
+
+    virtual void build(){
+        cout << "Base::build()" << endl;
+    }
+
+    void show ()    // non virtual method
+    { cout<< "Base::show()" <<endl; } 
+
+    void setup(){   // in Base class method, invoke subClass method in runtime
+        //build();
+        // build() equal to:
+        this->build();
+    }
+    
+
 }; 
    
 class Derived : public Base 
@@ -33,20 +46,24 @@ class Derived : public Base
 public: 
     virtual void test() override /*final*/;
     void print () override  //print () is already virtual function in Derived class, we could also declared as virtual void print () explicitly 
-    { cout<< "print Derived class" <<endl; } 
+    { cout<< "Derived::prinit()" <<endl; } 
    
     void show () 
-    { cout<< "show Derived class" <<endl; } 
+    { cout<< "Derived::show()" <<endl; } 
 
     void printData() const override;
+
+    void build(){
+        cout << "Derived::build()" << endl;
+    }
 }; 
 
 void Derived::printData() const{
-    cout << "in Derived::printData()" << endl;
+    cout << "Derived::printData()" << endl;
 }
 
 void Derived::test() /*override*/ {     // error: virt-specifiers in 'test' not allowed outside a class definition
-    cout << "in void Derived::test()" << endl;
+    cout << "Derived::test()" << endl;
 }
   
 
@@ -55,7 +72,7 @@ class SecondDerived: public Derived{
     virtual void test() override;   // compile error the parent class function is final, so cannot override by child.
 };
 void SecondDerived::test(){
-    cout << "in void SecondDerived::test()" << endl; 
+    cout << "SecondDerived::test()" << endl; 
 }
 
 //main function 
@@ -69,6 +86,7 @@ int main()
     bptr->print();  
     bptr->test();
     bptr->printData();
+    bptr->setup();
        
     // Non-virtual function, binded at compile time 
     bptr->show();  
