@@ -40,6 +40,13 @@ int main()
     cout << "i = " << i <<endl;
     cout << "ri = " << ri <<endl;
 
+    int* pi = &i;   //定义一个指针变量pi, 指向i的地址
+    cout << "*pi = " << *pi << endl;    //输出pi指向地址对应的内容
+
+    int& rpi = *pi;     // 声明rpi是一个引用，初始化为pi指针的内容
+    cout <<"rpi = " << rpi << endl;
+    rpi = 99;
+    cout << i <<" "<< ri <<" "<< *pi <<" "<< rpi <<" "<< endl;  // should all equal to 99
 
     return 0;
 }

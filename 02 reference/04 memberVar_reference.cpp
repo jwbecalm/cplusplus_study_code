@@ -1,9 +1,8 @@
 // 成员变量是引用的情况（转载）
-https://blog.csdn.net/lazyq7/article/details/48186291
+// https://blog.csdn.net/lazyq7/article/details/48186291
 
 #include <iostream>
-using std::cout;
-using std::endl;
+using namespace std;
 
 /*
 不能有默认构造函数, 必须提供构造函数
@@ -12,11 +11,21 @@ using std::endl;
 */
 
 class MemberRef {
-    int m_rfData;
+    int& m_rfData;
+
     public:
     MemberRef(int &initValue): m_rfData(initValue){}
 
     void print(){
-        cout << 
+        cout << "m_rfData = " << m_rfData << endl;
     }
+};
+
+int main(){
+    int i = 99;
+    int& value = i;
+
+    MemberRef m1(value);
+    m1.print();
+    return 0;
 }
